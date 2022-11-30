@@ -1,0 +1,105 @@
+let a = 5 ;
+let b = 6; 
+console.log(a*b);
+let c = 7;
+let d = 9;
+let out2 = document.querySelector('.out-2');
+out2.innerHTML = c/d;
+let e = 3;
+let f = 5;
+let out3 = document.querySelector('.out-3');
+out3.innerHTML = e/f;
+let e1 = '3';
+let f1 = 5;
+let out4 = document.querySelector('.out-4');
+out4.innerHTML = e1+f1;
+let e2 = 3;
+let f2 = 0;
+let out5 = document.querySelector('.out-5');
+out5.innerHTML = e2/f2;
+let e3 = 3;
+let f3 = 'Hello';
+let out6= document.querySelector('.out-6');
+out6.innerHTML = e3+f3;
+let e4 = 3;
+let f4 = 'Hello';
+let out7 = document.querySelector('.out-7');
+out7.innerHTML = e4*f4;
+let input = document.querySelector('input');
+let go = document.querySelector('button');
+let h2 = document.querySelector('h2');
+go.addEventListener('click', ()=>{
+    let value = +input.value;
+    h2.innerHTML = value * 10;
+    input.value = '';
+});
+let name1 = document.querySelector('.i-12-1');
+let surname = document.querySelector('.i-12-2');
+let i_btn = document.querySelector('.i-btn');
+let out12 = document.querySelector('.out-12');
+i_btn.addEventListener('click', ()=>{
+let a = name1.value;
+let b = surname.value;
+out12.innerHTML = 'Hello' + " " + a + " " + b;
+});
+let multi1 = document.querySelector('.multi1');
+let multi2 = document.querySelector('.multi2');
+let out13 = document.querySelector('.out-13');
+let multi_btn = document.querySelector('.multi-btn');
+multi_btn.addEventListener('click', () =>{
+out13.innerHTML = +multi1.value + +multi2.value;
+multi1.value = '';
+multi2.value = '';
+});
+let input77 = document.querySelector('.i-14');
+input77.value = 'Hello';
+let y = document.querySelector('.i-15');
+y.style.border = "2px solid red";
+let sum1 = document.querySelector('.sum1');
+let sum2 = document.querySelector('.sum2');
+let btn_g = document.querySelector('.gg');
+let solution = document.querySelector('.solution');
+btn_g.addEventListener('click', () =>{
+ solution.innerHTML = +sum1.value + +sum2.value;
+ sum1.value = '';
+ sum2.value = '';
+});
+let parse = document.querySelector('.parse');
+let btn_parse = document.querySelector('.btn-parse');
+let parse_out = document.querySelector('.out-17');
+btn_parse.addEventListener('click', () =>{
+let t = parse.value;
+t = parseFloat(t);
+parse_out.innerHTML = t;
+});
+
+let minus_1 = document.querySelector('.minus_1');
+let minus_2 = document.querySelector('.minus_2');
+let minus = document.querySelector('.minus');
+let answ = document.querySelector('.answer');
+minus.addEventListener('click', () =>{
+    let a = parseInt(minus_1.value);
+    let b = parseInt(minus_2.value);
+    // let b = +minus_2.value;
+answ.innerHTML =  a + b ;
+    minus_1.value = '';
+    minus_2.value = '';
+});
+
+let nameIz = document.querySelector('#name');
+let surnameIz = document.querySelector('#surname');
+let ageIz = document.querySelector('#age');
+let work = document.querySelector('#work');
+let sharmanka = document.querySelector('.sharmanka');
+let block = document.querySelector('.work');
+sharmanka.addEventListener('click', () =>{
+ let a = nameIz.value;
+ let b = surnameIz.value;
+ let c = ageIz.value;
+ let d = work.value;
+ block.innerHTML = 'Уважаемый ' + a + ', ' + b +', ваш возраст ' + c + ' года, по професии вы ' + d;
+ nameIz.value = '';
+ surnameIz.value = '';
+ ageIz.value = '';
+ work.value = '';
+});
