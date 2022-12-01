@@ -1,8 +1,8 @@
 // Task 1
 // Создайте button.b-1 - при нажатии на него выводите alert с номером задачи. Номер задачи просто пропишите вручную.
-
 function f1() {
-
+    let a = document.querySelector('.bold1');
+    alert(a.textContent);
 }
 
 document.querySelector('.b-1').onclick = f1;
@@ -11,8 +11,9 @@ document.querySelector('.b-1').onclick = f1;
 // Task 2
 // Создайте input.b-2 type=button - при нажатии на него выводите alert с номером задачи. Номер задачи просто пропишите вручную.
 
-function f2() {
-
+function f2() { 
+    let a = document.querySelector('.bold2');
+    alert(a.textContent);
 }
 
 document.querySelector('.b-2').onclick = f2;
@@ -22,7 +23,8 @@ document.querySelector('.b-2').onclick = f2;
 // Создайте p.p-3 - при нажатии на него выводите alert с номером задачи.
 
 function f3() {
-
+    let a = document.querySelector('.bold3');
+    alert(a.textContent);
 }
 
 document.querySelector('.p-3').onclick = f3;
@@ -31,7 +33,14 @@ document.querySelector('.p-3').onclick = f3;
 // Task 4. Создайте input(checkbox).i-4 и button.b-4 - при нажатии на кнопку выводите true если checkbox выбран и false если не выбран. Вывод везде в задачах, где не указано другое, осуществляется в div.out-номер задачи. В данном случае div.out-4
 
 function f4() {
-
+    const a = document.querySelector('.i-4');
+    let out4 = document.querySelector('.out-4');
+    if (a.checked){
+        out4.innerHTML = a.checked;
+    } else {
+        out4.innerHTML = a.checked;
+    }
+    console.log(a.checked);
 }
 
 document.querySelector('.b-4').onclick = f4;
@@ -40,7 +49,13 @@ document.querySelector('.b-4').onclick = f4;
 //Создайте input(checkbox).i-5 и button.b-5. Для checkbox добавьте value="task-5" - при нажатии на кнопку b-5 выводите value checkbox если checkbox выбран и false если не выбран. Вывод везде в задачах, где не указано другое, осуществляется в div.out-номер задачи. В данном случае div.out-5
 
 function f5() {
-
+const a = document.querySelector('.i-5');
+const c = document.querySelector('.out-5');
+if ( a.checked ){
+    c.innerHTML = a.value;
+} else{
+    c.innerHTML = a.checked;
+}
 }
 
 document.querySelector('.b-5').onclick = f5;
@@ -50,7 +65,9 @@ document.querySelector('.b-5').onclick = f5;
 //Создайте input(hidden).i-6 и button.b-6 - при нажатии на кнопку выводите value из input в div.out-6
 
 function f6() {
-
+const a = document.querySelector('.i-6');
+const c = document.querySelector('.out-6');
+c.innerHTML = a.value;
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -59,7 +76,15 @@ document.querySelector('.b-6').onclick = f6;
 // Создайте input(password).i-7 и button.b-7 - при нажатии на кнопку выводите в div.out-71 value прописанное в input. В .out-72 выводите 1 если длина пароля больше или равна 6 или 0 если меньше. Для подсчета количества символов в строке используйте length.
 
 function f7() {
-
+ const a = document.querySelector('.i-7');
+ const b = document.querySelector('.out-71');
+ const c = document.querySelector('.out-72');
+ b.innerHTML  = a.value;
+if(a.value.length >= 6){
+ c.innerHTML = 1;
+} else {
+    c.innerHTML = 0;
+}
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -68,16 +93,18 @@ document.querySelector('.b-7').onclick = f7;
 // Создайте div.out-8 и кнопку .b-8. При нажатии кнопки создавайте внутри div.out-8 элемент input.i-81 и кнопку .b-81 (innerHTML). Добавьте на созданную кнопку событие клик и запуск функции f81. Функция должна в .out-81 выводить value созданного input.i-81.
 
 function f8() {
-    // кнопку создаем через ....innerHTML = '<button....</button>
-    // т.е. как строку и в ставляем на страницу
-    //  потом получаем кнопку со страницы и вешаем событие
-    //    вашасозданнаякнопка.onclick = f81;
-    //
+    let a = document.querySelector('.out-8');
+    a.innerHTML = '<input type="text" class="i-81"> <button class="b-81">Кликни</button>';
+    let b = document.querySelector('.b-81');
+    b.addEventListener('click', ()=>{
+        f81();
+    });
 }
-
-function f81 () {
-
-}
+    function f81 () {
+        let a = document.querySelector('.out-81');
+        let c = document.querySelector('.i-81');
+        a.innerHTML = c.value;
+    }
 
 document.querySelector('.b-8').onclick = f8;
 
