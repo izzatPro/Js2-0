@@ -238,38 +238,44 @@ document.querySelector('.b-9').onclick = t9;
 function t10() {
     let out = document.querySelector('.out-10');
     let b = "";
-    let c ;
-    let f = 1;
+    let c = 9 ;
     for(let i = 0; i < 5 ; i++){
 
         for(let j = 1 ; j < 10 ; j++ ){       
             if( i == 0){
                 b+= "0" + j + " ";
             }
-            else {
+            if ( (i == 0 && j == 9) || (i > 0) ){
                 c+=1;
                 b+= c + " ";
+                if(i == 0) {continue;};
                 if(j == 9){
                     c+=1;
-                }
-                
+                    b+=c;
+                }               
             }
-
-            if( i == 0 && j == 9){
-                c = j + 1;
-                b+=c;
-            }
-
-            if( i > 0 && j == 9){
-                f += 1 ;
-                b += f + "0";
-                console.log(f);
-            }
-            // console.log(c);
         }
         b+="<br>";
     }
     out.innerHTML = b;
 }
-
 document.querySelector('.b-10').onclick = t10;
+
+// Используя вложенные циклы создайте таблицу умножения от 1 до 10. Т.е. вначале столбец 1x1, 1x2...1x9 потом 2x1, 2x2 ... 2x9 и так далее. Оформить в виде столбцов где выводятся множители и результат.
+
+function t11() {
+    let out = document.querySelector('.out-11');
+    let b = "";
+    let c = "";
+        for(let i = 1 ; i < 10 ; i++){
+            for(let j = 1 ;  j < 10 ; j++){
+                b+= `${i} * ${j} = ${i * j} <br>`;
+            }
+            b+= "<br>";
+        }
+        out.innerHTML = b ;
+    }
+    
+    document.querySelector('.b-11').onclick = t11;
+
+

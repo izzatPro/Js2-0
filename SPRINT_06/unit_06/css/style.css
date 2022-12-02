@@ -35,3 +35,11 @@ section {
 .active-img {
     border: 3px solid black;
 }
+.out-11{
+    display: flex;
+
+}
+.p{
+    display: block;
+    width: 80px;
+}
