@@ -157,7 +157,15 @@ document.querySelector('.b-6').onclick = t6;
 // </pre>
 // <p>Внешний цикл выводит перенос строки br. Вложенный цикл запускается от нуля до i и рисует звездочку.</p>
 function t7() {
-
+    let out = document.querySelector('.out-7');
+    let b = "";
+    for (let i = 1 ; i < 5 ; i++){
+        for(let j = 0 ; j < i ; j++){
+            b+="*";
+        }
+        b+='<br>';
+    }
+    out.innerHTML = b;
 }
 
 document.querySelector('.b-7').onclick = t7;
@@ -174,7 +182,18 @@ document.querySelector('.b-7').onclick = t7;
 // </pre>
 // <p>Внешний цикл выводит перенос строки br. Вложенный цикл рисует звездочки. </p>
 function t8() {
+    let out = document.querySelector('.out-8');
+    let b = "";
+    for(let i = 5 ; i >= 0 ; i--){
 
+        for(let j = 0 ; j < i ; j++ ){
+            b+="*";
+        }
+
+
+        b+="<br>";
+    }
+    out.innerHTML = b;
 }
 
 document.querySelector('.b-8').onclick = t8;
@@ -191,7 +210,15 @@ document.querySelector('.b-8').onclick = t8;
 // </pre>
 // <p>Внешний цикл выводит перенос строки br. Вложенный цикл рисует цифры</p>
 function t9() {
-
+let out = document.querySelector('.out-9');
+let b = "";
+for(let i = 2 ; i < 7 ; i++){
+    for(let j = 1 ; j < i ; j++){
+        b+=j + " ";
+    }
+    b+= "<br>";
+}
+out.innerHTML = b;
 }
 
 document.querySelector('.b-9').onclick = t9;
@@ -209,7 +236,40 @@ document.querySelector('.b-9').onclick = t9;
 // <p>Внешний цикл выводит перенос строки br и запускается от 0 до 6.</p>
 // <p>Вложенный цикл рисует цифры от 0 до 9. Обратите внимание, что первый ряд - есть ведущий нуль. Здесь все просто - проверили, если число меньше 10 - то конкатенируем нуль.</p>
 function t10() {
+    let out = document.querySelector('.out-10');
+    let b = "";
+    let c ;
+    let f = 1;
+    for(let i = 0; i < 5 ; i++){
 
+        for(let j = 1 ; j < 10 ; j++ ){       
+            if( i == 0){
+                b+= "0" + j + " ";
+            }
+            else {
+                c+=1;
+                b+= c + " ";
+                if(j == 9){
+                    c+=1;
+                }
+                
+            }
+
+            if( i == 0 && j == 9){
+                c = j + 1;
+                b+=c;
+            }
+
+            if( i > 0 && j == 9){
+                f += 1 ;
+                b += f + "0";
+                console.log(f);
+            }
+            // console.log(c);
+        }
+        b+="<br>";
+    }
+    out.innerHTML = b;
 }
 
 document.querySelector('.b-10').onclick = t10;
