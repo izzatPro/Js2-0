@@ -332,3 +332,85 @@ function t14() {
     document.querySelector('.b-14').onclick = t14;
 
 
+function t15() {
+    let a = document.querySelector('.out-15');
+    let b = "";
+    for(let i = 0 ; i < 2 ; i++){
+        if( i == 0){
+            for(let i = 0 ; i < 1 ; i++){
+                b+="*";
+            }
+            b+="<br>";
+        } else{
+            for(let i = 0 ; i < 2 ; i++){
+                b+="*";
+            }
+            b+="<br>";
+        }
+        if (i == 0){
+            for(let j = 0 ; j < 2 ; j++){
+                b+="*";
+            }
+            b+="<br>";
+        } else{
+            for(let j = 0 ; j < 1 ; j++){
+                b+="*";
+            }
+            b+="<br>";
+        }
+        if(i == 0){
+            for(let j = 0 ; j < 3 ; j++){
+                b+="*";
+            }
+            b+="<br>";
+        }
+    }
+    a.innerHTML = b;
+   
+}
+    
+    document.querySelector('.b-15').onclick = t15;
+
+
+
+    // ******
+    // *       *
+    // *       *
+    // *       *
+    //     ******
+
+    function t16() {
+        let out = document.querySelector('.out-16 pre');
+        let b = "";
+        for(let i = 0 ; i < 5 ; i++){
+            if(i == 0 ){
+                for(let j = 0 ; j < 6 ; j++){
+                    b+="*";
+                }
+                b+="<br>";
+            } 
+            if ( i > 0 && i <=3){
+                for(let k = 0 ; k < 1 ; k++){
+                    b+="*";
+                    for(let t = 0 ; t < 7 ; t++){
+                        b+= " ";
+                    }
+                    b+="*";
+                }
+                b+="<br>";
+            }
+            if( i == 4){
+                for(let q = 0 ; q < 4 ; q++){
+                    b+=" ";
+                }
+                for(let c = 0 ; c < 6; c++){
+                    b+="*";
+                }
+                b+="<br>";
+            }
+        }
+        out.innerHTML = b;
+    }
+        
+        document.querySelector('.b-16').onclick = t16;
+
