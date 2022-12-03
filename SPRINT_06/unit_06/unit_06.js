@@ -279,3 +279,56 @@ function t11() {
     document.querySelector('.b-11').onclick = t11;
 
 
+
+   
+// *****
+// *****
+// *****
+
+function t12() {
+    let out = document.querySelector('.out-12');
+    let b = "";
+    for( let i = 0 ; i < 3 ; i++){
+        for(let i = 0 ; i < 5 ; i++){
+            b+="*";
+        }
+        b+="<br>";
+    }
+    out.innerHTML = b;
+}
+    
+    document.querySelector('.b-12').onclick = t12;
+
+function t13() {
+    let a = document.querySelector('.out-13');
+    let b = "";
+    for(let i = 4 ; i >= 0 ; i--){
+        for(let j = i ; j >= 0 ; j--){
+            b+="*";
+        }
+        b+="<br>";
+    }
+    a.innerHTML = b;
+}
+    
+    document.querySelector('.b-13').onclick = t13;
+
+function t14() {
+    let a = document.querySelector('.out-14 pre');
+    let b = "";
+    for(let i = 0 ; i < 3 ; i++){
+        for(let j = i ; j < 4  ; j++){
+            b+=" ";
+        }
+        for( let k = 0 ; k < 5 ; k++ ){
+            b+="*";
+        }
+        b+='<br>';         
+    }
+    a.innerHTML = b;
+   
+}
+    
+    document.querySelector('.b-14').onclick = t14;
+
+
