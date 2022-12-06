@@ -409,8 +409,56 @@ function t15() {
                 b+="<br>";
             }
         }
+        console.log(b);
         out.innerHTML = b;
     }
         
         document.querySelector('.b-16').onclick = t16;
+
+
+        // 5 4 3 2 1
+        // 4 3 2 1
+        // 3 2 1
+        // 2 1
+        // 1
+        function t17() {
+            let out = document.querySelector('.out-17');
+            let b = "";
+            for(let i = 0 ; i < 5 ; i++){
+                for(let j = 5 - i ; j > 0 ; j--){
+                    b+= j + " ";
+                }
+                b+="<br>";
+            }
+            out.innerHTML = b;
+        }
+            
+            document.querySelector('.b-17').onclick = t17;
+
+
+    //         1
+    //       2 1 
+    //     3 2 1
+    //   4 3 2 1
+    // 5 4 3 2 1
+        function t18() {
+           let out = document.querySelector('.out-18 pre');
+           let b = "";
+           for(let i = 0 ; i < 5 ; i++){
+            for(let j = i+1; j < 10 ; j++){
+                b+=`  `;
+            }
+            switch(i){
+                case 0:  b+= `${i+1}`; break;
+                case 1:  b+= `${i+1} ${i}`; break;
+                case 2:  b+= `${i+1} ${i} ${i-1} `; break;
+                case 3:  b+= `${i+1} ${i} ${i-1} ${i-2}`; break;
+                case 4:  b+= `${i+1} ${i} ${i-1} ${i-2} ${i-3}`; break;
+            }
+            b+=`<br>`;
+           }
+           out.innerHTML = b;
+        }
+            
+            document.querySelector('.b-18').onclick = t18;
 
