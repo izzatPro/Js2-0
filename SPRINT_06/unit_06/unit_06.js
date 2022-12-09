@@ -445,7 +445,7 @@ function t15() {
            let out = document.querySelector('.out-18 pre');
            let b = "";
            for(let i = 0 ; i < 5 ; i++){
-            for(let j = i+1; j < 10 ; j++){
+            for(let j = i+1; j < 5 ; j++){
                 b+=`  `;
             }
             switch(i){
@@ -461,4 +461,101 @@ function t15() {
         }
             
             document.querySelector('.b-18').onclick = t18;
+
+
+        function t19() {
+           let out = document.querySelector('.out-19 pre');
+           let b = "";
+           for(let i = 0 ; i < 5 ; i++){
+            for(let j = i+1; j < 5 ; j++){
+                b+=`X `;
+            }
+            switch(i){
+                case 0:  b+= `${i+1}`; break;
+                case 1:  b+= `${i+1} ${i}`; break;
+                case 2:  b+= `${i+1} ${i} ${i-1} `; break;
+                case 3:  b+= `${i+1} ${i} ${i-1} ${i-2}`; break;
+                case 4:  b+= `${i+1} ${i} ${i-1} ${i-2} ${i-3}`; break;
+            }
+            b+=`<br>`;
+           }
+           out.innerHTML = b;
+        }
+            
+            document.querySelector('.b-19').onclick = t19;
+
+
+
+            // 1
+            // 2  2
+            // 3  3  3
+            // 4  4  4  4
+            // 5  5  5  5  5
+
+        function t20() {
+           let out = document.querySelector('.out-20 pre');
+           let b = "";
+           for(let i = 0 ; i < 5 ; i++){
+            // for(let j = i+1; j < 5 ; j++){
+            //     b+=`X `;
+            // }
+            switch(i){
+                case 0:  b+= `${i+1}`; break;
+                case 1:  b+= `${i+1}  ${i+1}`; break;
+                case 2:  b+= `${i+1}  ${i+1}  ${i+1} `; break;
+                case 3:  b+= `${i+1}  ${i+1}  ${i+1}  ${i+1}`; break;
+                case 4:  b+= `${i+1}  ${i+1}  ${i+1}  ${i+1}  ${i+1}`; break;
+            }
+            b+=`<br>`;
+           }
+           out.innerHTML = b;
+        }
+            
+            document.querySelector('.b-20').onclick = t20;
+
+            // 5
+            // X  X
+            // 3  3  3
+            // X  X  X  X
+            // 1  1  1  1  1
+        function t21() {
+           let out = document.querySelector('.out-21 pre');
+           let b = "";
+           for(let i = 5 ; i > 0 ; i--){
+            // for(let j = i+1; j < 5 ; j++){
+            //     b+=`X `;
+            // }
+            switch(i){
+                case 5:  b+= `${i}`; break;
+                case 4:  b+= `X  X`; break;
+                case 3:  b+= `${i}  ${i}  ${i} `; break;
+                case 2:  b+= `X  X  X  X`; break;
+                case 1:  b+= `${i}  ${i}  ${i}  ${i}  ${i}`; break;
+            }
+            b+=`<br>`;
+           }
+           out.innerHTML = b;
+        }
+            
+            document.querySelector('.b-21').onclick = t21;
+
+        function t22() {
+           let out = document.querySelector('.out-22 pre');
+           let b = "";
+           for(let i = 0 ; i < 3 ; i++){
+            for(let j = 0 ; j < i+1 ; j++){
+                b+=" ";
+            }
+
+            for(let k = 0 ; k < i+2 ; k++){
+                b+='**';
+            }
+            b+="*";
+
+            b+="<br>";
+           }
+           out.innerHTML = b;
+        }
+            
+            document.querySelector('.b-22').onclick = t22;
 
