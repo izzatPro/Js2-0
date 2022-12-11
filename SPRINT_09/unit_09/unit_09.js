@@ -200,24 +200,31 @@ let out16 = document.querySelector('.out-16');
 function f16() {
     let div = document.createElement('div');
     div.innerHTML = '16';
-    div.classList.add()
+    div.classList.add('bg-16');
+    out16.after(div);
 }
 
 document.querySelector('.b-16').onclick = f16;
 
 //  Task 17
 // Добавьте кнопку .b-17, которая запускает функцию f17. Функция создает через createElement div c текстом 17 и добавляет ему класс bg-17. Созданный div заменяет  out-17 с помощью replaceWith.
-
+let out17 = document.querySelector('.out-17');
 function f17() {
-
+let div = document.createElement('div');
+div.innerHTML = '17';
+div.classList.add('bg-17');
+out17.replaceWith(div);
 }
 
 document.querySelector('.b-17').onclick = f17;
 
 //  Task 18
 // Добавьте кнопку .b-18, которая запускает функцию f18. Функция с помощью getAttribute получает data-b атрибут с параграф p-18 и выводит в out-18.
-
+let p18 = document.querySelector('.p-18');
+let out18 = document.querySelector('.out-18');
 function f18() {
+ let c = p18.getAttribute('data-b');
+ out18.innerHTML = c;
 
 }
 
@@ -226,17 +233,21 @@ document.querySelector('.b-18').onclick = f18;
 //  Task 19
 // Добавьте кнопку .b-19, которая запускает функцию f19. Функция с помощью getAttribute получает data-b атрибут с параграфов p-19 и выводит в out-19 через пробел. Обратите внимание, что элементов p-19 больше одного.
 
+let out19 = document.querySelector('.out-19');
+let p19 = document.querySelectorAll('.p-19');
 function f19() {
-
+    for(let i = 0 ; i < p19.length ; i++){
+        out19.innerHTML += p19[i].getAttribute('data-b') + " ";
+    }
 }
 
 document.querySelector('.b-19').onclick = f19;
 
 //  Task 20
 // Добавьте кнопку .b-20, которая запускает функцию f20. Функция с помощью setAttribute присваивает атрибут title="go" в div.out-20.
-
+let out20 = document.querySelector('.out-20');
 function f20() {
-
+// out20.setAttribute('title','go');
 }
 
 document.querySelector('.b-20').onclick = f20;
