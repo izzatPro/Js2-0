@@ -12,9 +12,8 @@ function showArr(domElem, arr) {
 let d1 = [33, 'best', 66, 'best'];
 
 function f1() {
-    /**
-     * ваш код здесь
-     */
+    let i = document.querySelector('.i-1').value;
+    d1.push(i);
     showArr('.out-1', d1);
 }
 
@@ -25,7 +24,7 @@ document.querySelector('.b-1').onclick = f1;
 // функция выполняется при нажатии кнопки b-2
 
 function f2() {
-
+    d1.pop();
     showArr('.out-2', d1);
 }
 
@@ -36,7 +35,7 @@ document.querySelector('.b-2').onclick = f2;
 // функция выполняется при нажатии кнопки b-3
 
 function f3() {
-
+    d1.shift();
     showArr('.out-3', d1);
 }
 
@@ -48,7 +47,8 @@ document.querySelector('.b-3').onclick = f3;
 
 
 function f4() {
-
+    let i = document.querySelector('.i-4').value;
+    d1.push(i);
     showArr('.out-4', d1);
 }
 
@@ -59,7 +59,8 @@ document.querySelector('.b-4').onclick = f4;
 // функция выполняется при нажатии кнопки b-5
 
 function f5() {
-
+    let i = document.querySelector('.i-5').value;
+    d1.unshift(i);
     showArr('.out-5', d1);
 }
 
@@ -74,7 +75,8 @@ document.querySelector('.b-5').onclick = f5;
 let d6 = ['test', 5, 12];
 
 function f6() {
-
+    let i = document.querySelector('.i-6').value;
+    d6[d6.length] = i;
     showArr('.out-6', d6);
 }
 
@@ -87,10 +89,15 @@ document.querySelector('.b-6').onclick = f6;
 // Вывод в out-7
 
 let d7 = ['china', 'india', 'brazil', 'japan', 'egypt'];
-
+let t = 1;
 function f7() {
-
-    showArr('.out-7', d7);
+    c = [];
+    for(let i = 0 ; i < d7.length - t ; i++){
+        c[i] = d7[i];
+    }
+    t++;
+    console.log(c);
+    showArr('.out-7', c);
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -102,10 +109,31 @@ document.querySelector('.b-7').onclick = f7;
 // Вывод в out-8
 
 let d8 = [2, '4', 12, 67, 'hello'];
+let c = [];
 
 function f8() {
+    let b = 0;
+    let i =  document.querySelector('.i-8').value;
+ 
+    // c[0] = i;
+    // c[1] = c[0];
+    // c[2] = c[1];
+    // c[3] = c[2];
+    // c[4] = c[3];
+    // c[5] = c[4];
+    // for(let k = 0 ;  k < d8.length + b + 1 ; k++){
+    //     c[b]= i;
+    //     c[b+k+1] = c[k-1]
+    // }
 
-    showArr('.out-8', d8);
+    for(let i )
+    if( c.length >= 1){
+        b++;
+        c[b] = c[b-1];
+    }
+    c[0] = i;
+    console.log(c);
+    showArr('.out-8', c);
 }
 
 document.querySelector('.b-8').onclick = f8;
@@ -134,7 +162,7 @@ document.querySelector('.b-9').onclick = f9;
 let d10 = [3, 14, 15, 92, 6];
 
 function f10() {
-
+    console.log(d10.reverse());
     showArr('.out-10', d10);
 }
 
