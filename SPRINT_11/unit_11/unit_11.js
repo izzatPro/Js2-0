@@ -109,12 +109,14 @@ document.querySelector('.b-7').onclick = f7;
 // Вывод в out-8
 
 let d8 = [2, '4', 12, 67, 'hello'];
-let c = [];
-
 function f8() {
-    let b = 0;
     let i =  document.querySelector('.i-8').value;
- 
+    for(let i = 0 ; i < d8.length ; i++){
+        d8[i] = d8[i++];
+    }
+
+
+
     // c[0] = i;
     // c[1] = c[0];
     // c[2] = c[1];
@@ -126,29 +128,37 @@ function f8() {
     //     c[b+k+1] = c[k-1]
     // }
 
-    for(let i )
-    if( c.length >= 1){
-        b++;
-        c[b] = c[b-1];
-    }
-    c[0] = i;
-    console.log(c);
+    // for(let f = 0 ; f < b+1  ; f++){ 
+    //     if(c.length >= 1){
+    //         c[f] = c[f-1];
+    //     }
+    //     c[0] = i;
+    // }
+    // b++;
+
+    // if( c.length >= 1){
+    //     b++;
+    //     c[b] = c[b-1];
+    // }
+    // c[0] = i;
+    // console.log(c);
     showArr('.out-8', c);
 }
 
 document.querySelector('.b-8').onclick = f8;
 
 // Task 9
-// Напишите функцию f8, которая эмулирует работу метода shift - на примере массива d9.
+// Напишите функцию f9, которая эмулирует работу метода shift - на примере массива d9.
 // Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
 // Вывод - по нажатию кнопки b-9
 // Вывод в out-9
 
 let d9 = [100, 200, 300, 400, 700, 121];
-
+let c9 = [];
 function f9() {
 
-    showArr('.out-9', d9);
+
+    showArr('.out-9', c9);
 }
 
 document.querySelector('.b-9').onclick = f9;
@@ -162,7 +172,7 @@ document.querySelector('.b-9').onclick = f9;
 let d10 = [3, 14, 15, 92, 6];
 
 function f10() {
-    console.log(d10.reverse());
+    d10.reverse();
     showArr('.out-10', d10);
 }
 
@@ -176,9 +186,17 @@ document.querySelector('.b-10').onclick = f10;
 // Вывод в out-11
 
 let d11 = [2, 3, 4, 5, 6, 7];
+let out11 = document.querySelector('.out-11');
 
 function f11() {
-
+let input = +document.querySelector('.i-11').value;
+    for(let i = 0 ; i < d11.length ; i++){
+        if(d11.indexOf(input) != -1 ) {
+            out11.innerHTML = 'Индекс в массиве : ' + d11.indexOf(input);
+        } else if ( d11.indexOf(input) == -1 && i == d11.length - 1) {
+            out11.innerHTML = d11.indexOf(input);
+        }
+}
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -191,9 +209,20 @@ document.querySelector('.b-11').onclick = f11;
 // Вывод в out-12
 
 let d12 = [6, 62, 60, 70, 1, 5];
-
+let out12 = document.querySelector('.out-12');
+console.log(out12);
 function f12() {
-
+    let input = +document.querySelector('.i-12').value;
+    for (let i = 0 ; i < d12.length; i++){
+        if(  d12[i] == input ){
+            out12.innerHTML = 'Индекс массива: ' + i;
+            break;
+        } else if (d12[i] != input && d12.length == i + 1 ){
+            console.log(d12[i] != input);
+            console.log(i);
+            out12.innerHTML = '-1';
+        } 
+ }
 }
 
 document.querySelector('.b-12').onclick = f12;
@@ -206,10 +235,12 @@ document.querySelector('.b-12').onclick = f12;
 
 
 let d13 = [6, 0, 22, 1, 4, 76];
-
+let c13 = [];
 function f13() {
-
-    showArr('.out-13', d13);
+    for(let i = 0 ; i < d13.length ; i++){
+        c13[i] = d13[d13.length - i - 1];
+    }
+    showArr('.out-13', c13);
 }
 
 document.querySelector('.b-13').onclick = f13;
@@ -224,7 +255,11 @@ document.querySelector('.b-13').onclick = f13;
 let d14 = [];
 
 function f14() {
-
+    let input = +document.querySelector('.i-14').value;
+    for(let i = 0 ; i < input ; i++){
+        d14[i] = 1 ;
+    }
+    console.log(d14);
     showArr('.out-14', d14);
 }
 
@@ -237,10 +272,15 @@ document.querySelector('.b-14').onclick = f14;
 // Вывод в out-15
 
 let d15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
-
 function f15() {
-
-
+    let input = +document.querySelector('.i-15').value;
+    for(let i = 0 ; i < d15.length ; i++){
+        if(d15[i] == input){
+            break;
+        } else if (d15[i] != input && d15.length == i  + 1){
+            d15.push(input);
+        }
+    }
     showArr('.out-15', d15);
 }
 
@@ -257,7 +297,7 @@ let d161 = [5, 6, 7, 8, 9];
 let d162 = [23, 24, 56, 87];
 
 function f16() {
-
+    d16 = d161.concat(d162);
     showArr('.out-16', d16);
 }
 
@@ -274,7 +314,13 @@ let d171 = ['a', 'b', 'c', 'd'];
 let d172 = [1, 2, 3, 4, 5];
 
 function f17() {
-
+    for(let i = 0 ; i < d171.length + d172.length ; i++){
+        if (i < d171.length){
+            d17[i] = d171[i];
+        } else {
+            d17[i] = d172[i - d171.length ];
+        }
+    }
     showArr('.out-17', d17);
 }
 
@@ -290,7 +336,14 @@ document.querySelector('.b-17').onclick = f17;
 let d18 = ['b', 'c', '45', 'e', 'z', 'y'];
 
 function f18() {
-
+    let input = document.querySelector('.i-18').value;
+    let out18 = document.querySelector('.out-18');
+    if(d18.includes(input)){
+        out18.innerHTML = true;
+    } else {
+        out18.innerHTML = false;
+    }
+    
 }
 
 document.querySelector('.b-18').onclick = f18;
@@ -304,9 +357,16 @@ document.querySelector('.b-18').onclick = f18;
 
 let d19 = ['Your', 'payment', 'method', 'will', 'automatically', 'be', 'charged', 'in', 'advance', 'every'];
 let maxString = '';
-
+let out19 = document.querySelector('.out-19');
 function f19() {
+    maxString = d19[0];
+    for(let i = 0 ; i < d19.length ; i++){
 
+        if (maxString.length < d19[i].length){
+            maxString = d19[i];
+        }
+    }
+    out19.innerHTML = maxString;
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -318,9 +378,11 @@ document.querySelector('.b-19').onclick = f19;
 // Вывод в out-20
 
 let d20 = [4, 5, 6, 7, 8, 9, 10];
-
+let out20 = document.querySelector('.out-20');
 function f20() {
-
+    let c = d20.join('');
+    out20.innerHTML = c;
+    console.log(c);
 }
 
 document.querySelector('.b-20').onclick = f20;
